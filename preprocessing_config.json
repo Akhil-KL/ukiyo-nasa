@@ -1,0 +1,125 @@
+{
+  "preprocessing_config": {
+    "data_paths": {
+      "raw_data_dir": "data/raw",
+      "processed_data_dir": "data/processed", 
+      "scalers_dir": "data/scalers",
+      "models_dir": "data/models"
+    },
+    "datasets": {
+      "k2": "K2 Planets and Candidate.csv",
+      "kepler": "Kepler Objects of Interest(KOI).csv",
+      "tess": "TESS Objects of Interest(TOI).csv"
+    },
+    "split_ratios": {
+      "train": 0.70,
+      "validation": 0.15,
+      "test": 0.15
+    },
+    "imputation_strategies": {
+      "physical_properties": "median",
+      "observational_properties": "knn",
+      "categorical": "mode",
+      "knn_neighbors": 5
+    },
+    "feature_engineering": {
+      "create_transit_snr": true,
+      "create_habitability_zone": true,
+      "create_size_categories": true,
+      "create_stellar_classes": true,
+      "create_discovery_eras": true,
+      "create_temp_categories": true,
+      "create_insolation_ratio": true
+    },
+    "normalization": {
+      "method": "standard_scaler",
+      "exclude_columns": ["disposition", "planet_name", "host_name"]
+    },
+    "data_augmentation": {
+      "enabled": true,
+      "method": "smote",
+      "imbalance_threshold": 2.0,
+      "alternatives": ["random_oversample", "smoteenn"]
+    },
+    "target_variable": {
+      "column": "disposition",
+      "encoding": "label_encoder",
+      "valid_classes": ["CONFIRMED", "CANDIDATE", "FALSE_POSITIVE", "UNKNOWN"]
+    },
+    "quality_filters": {
+      "min_planet_radius": 0.1,
+      "max_planet_radius": 50.0,
+      "min_orbital_period": 0.1,
+      "max_orbital_period": 10000.0,
+      "remove_controversial": true
+    }
+  },
+  "column_mappings": {
+    "k2": {
+      "pl_name": "planet_name",
+      "hostname": "host_name", 
+      "disposition": "disposition",
+      "discoverymethod": "discovery_method",
+      "disc_year": "discovery_year",
+      "pl_orbper": "orbital_period",
+      "pl_orbsmax": "semi_major_axis",
+      "pl_rade": "planet_radius",
+      "pl_bmasse": "planet_mass",
+      "pl_eqt": "equilibrium_temp",
+      "pl_insol": "insolation_flux",
+      "st_teff": "stellar_temp",
+      "st_rad": "stellar_radius",
+      "st_mass": "stellar_mass",
+      "sy_dist": "distance"
+    },
+    "kepler": {
+      "kepoi_name": "planet_name",
+      "kepler_name": "host_name",
+      "koi_disposition": "disposition", 
+      "koi_period": "orbital_period",
+      "koi_prad": "planet_radius",
+      "koi_teq": "equilibrium_temp",
+      "koi_insol": "insolation_flux",
+      "koi_duration": "transit_duration",
+      "koi_depth": "transit_depth",
+      "koi_model_snr": "transit_snr",
+      "koi_steff": "stellar_temp",
+      "koi_srad": "stellar_radius",
+      "koi_score": "disposition_score"
+    },
+    "tess": {
+      "toi": "planet_name",
+      "tfopwg_disp": "disposition",
+      "pl_orbper": "orbital_period", 
+      "pl_rade": "planet_radius",
+      "pl_eqt": "equilibrium_temp",
+      "pl_insol": "insolation_flux",
+      "pl_trandurh": "transit_duration",
+      "pl_trandep": "transit_depth",
+      "st_teff": "stellar_temp",
+      "st_rad": "stellar_radius",
+      "st_dist": "distance"
+    }
+  },
+  "feature_categories": {
+    "physical_properties": [
+      "planet_radius", "planet_mass", "equilibrium_temp", 
+      "stellar_temp", "stellar_radius", "stellar_mass"
+    ],
+    "orbital_properties": [
+      "orbital_period", "semi_major_axis", "insolation_flux"
+    ],
+    "observational_properties": [
+      "transit_duration", "transit_depth", "transit_snr", 
+      "disposition_score"
+    ],
+    "derived_features": [
+      "transit_snr_calculated", "in_habitable_zone", 
+      "insolation_ratio"
+    ],
+    "categorical_features": [
+      "size_category", "stellar_class", "discovery_era", 
+      "temp_category", "dataset_source", "discovery_method"
+    ]
+  }
+}

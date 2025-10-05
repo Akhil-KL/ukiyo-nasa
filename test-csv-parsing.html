@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Parsing Test</title>
+    <script src="https://unpkg.com/papaparse@5.3.2/papaparse.min.js"></script>
+</head>
+<body>
+    <h1>NASA CSV Parsing Test</h1>
+    <button onclick="testCSVParsing()">Test CSV Parsing</button>
+    <div id="results"></div>
+
+    <script>
+        function testCSVParsing() {
+            // Sample NASA data with comment headers
+            const sampleData = `# Sample NASA Exoplanet Archive Data
+# Generated for demonstration purposes
+# 
+# COLUMN loc_rowid:             Location ID
+# COLUMN pl_name:              Planet Name
+# COLUMN hostname:             Host Name
+# COLUMN default_flag:         Default Parameter Set
+# COLUMN disposition:          Archive Disposition
+pl_name,hostname,disposition,discoverymethod,disc_year,pl_orbper,pl_rade,pl_bmasse,st_teff,st_rad,st_mass,sy_dist
+Kepler-452b,Kepler-452,CONFIRMED,Transit,2015,384.843,1.6,5.0,5757,1.11,1.04,1402
+TRAPPIST-1e,TRAPPIST-1,CONFIRMED,Transit,2017,6.099615,0.92,0.69,2559,0.121,0.089,40.7
+Proxima Centauri b,Proxima Centauri,CONFIRMED,Radial Velocity,2016,11.186,1.1,1.17,3042,0.154,0.122,4.24`;
+            
+            // Preprocess function to remove comment lines
+            function preprocessCSV(csvText) {
+                const lines = csvText.split('\\n');
+                const headerIndex = lines.findIndex(line => line.trim() && !line.trim().startsWith('#'));
+                if (headerIndex === -1) {
+                    throw new Error('No valid data found in file');
+                }
+                return lines.slice(headerIndex).filter(line => line.trim() && !line.trim().startsWith('#')).join('\\n');
+            }
+            
+            try {
+                const processedData = preprocessCSV(sampleData);
+                console.log('Processed CSV:', processedData);
+                
+                Papa.parse(processedData, {
+                    header: true,
+                    skipEmptyLines: true,
+                    trimHeaders: true,
+                    delimiter: '',
+                    complete: function(results) {
+                        console.log('Parsing Results:', results);
+                        
+                        const resultsDiv = document.getElementById('results');
+                        resultsDiv.innerHTML = `
+                            <h2>Parsing Results:</h2>
+                            <p><strong>Rows parsed:</strong> ${results.data.length}</p>
+                            <p><strong>Errors:</strong> ${results.errors.length}</p>
+                            <p><strong>Headers:</strong> ${results.meta.fields.join(', ')}</p>
+                            <h3>Sample Data:</h3>
+                            <pre>${JSON.stringify(results.data.slice(0, 3), null, 2)}</pre>
+                            ${results.errors.length > 0 ? `<h3>Errors:</h3><pre>${JSON.stringify(results.errors, null, 2)}</pre>` : ''}
+                        `;
+                    },
+                    error: function(error) {
+                        console.error('Parsing Error:', error);
+                        document.getElementById('results').innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+                    }
+                });
+            } catch (error) {
+                console.error('Preprocessing Error:', error);
+                document.getElementById('results').innerHTML = `<p style="color: red;">Preprocessing Error: ${error.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>

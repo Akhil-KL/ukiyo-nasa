@@ -1,0 +1,26 @@
+# This is a NASA Exoplanet Archive data sample
+# Generated for testing CSV parsing functionality
+# 
+# COLUMN pl_name:              Planet Name
+# COLUMN hostname:             Host Star Name
+# COLUMN disposition:          Archive Disposition
+# COLUMN discoverymethod:      Discovery Method
+# COLUMN disc_year:           Discovery Year
+# COLUMN pl_orbper:           Orbital Period [days]
+# COLUMN pl_rade:             Planet Radius [Earth Radius]
+# COLUMN pl_bmasse:           Planet Mass or Mass*sin(i) [Earth Mass]
+# COLUMN st_teff:             Stellar Effective Temperature [K]
+# COLUMN st_rad:              Stellar Radius [Solar Radius]
+# COLUMN st_mass:             Stellar Mass [Solar mass]
+# COLUMN sy_dist:             Distance [pc]
+pl_name,hostname,disposition,discoverymethod,disc_year,pl_orbper,pl_rade,pl_bmasse,st_teff,st_rad,st_mass,sy_dist
+Kepler-452b,Kepler-452,CONFIRMED,Transit,2015,384.843,1.6,5.0,5757,1.11,1.04,1402
+TRAPPIST-1e,TRAPPIST-1,CONFIRMED,Transit,2017,6.099615,0.92,0.69,2559,0.121,0.089,40.7
+Proxima Centauri b,Proxima Centauri,CONFIRMED,Radial Velocity,2016,11.186,1.1,1.17,3042,0.154,0.122,4.24
+K2-18 b,K2-18,CONFIRMED,Transit,2015,32.940,2.3,8.6,3457,0.41,0.36,124
+TOI-715 b,TOI-715,CONFIRMED,Transit,2024,19.28,1.55,3.02,3341,0.374,0.357,137
+HD 209458 b,HD 209458,CONFIRMED,Transit,1999,3.52474859,1.4,0.69,6065,1.155,1.119,159
+GJ 1214 b,GJ 1214,CONFIRMED,Transit,2009,1.58040482,2.7,6.26,3026,0.211,0.176,14.8
+55 Cancri e,55 Cancri A,CONFIRMED,Transit,2004,0.73654649,2.17,8.63,5196,0.943,0.905,12.6
+WASP-121b,WASP-121,CONFIRMED,Transit,2015,1.27492518,1.9,1.183,6460,1.458,1.353,267
+HAT-P-7b,HAT-P-7,CONFIRMED,Transit,2008,2.2047372,1.363,1.741,6350,1.991,1.47,320

@@ -1,0 +1,10 @@
+{
+  "type": "one_hot",
+  "categories": [
+    "Very-Hot",
+    "Hot",
+    "Cold",
+    "Very-Cold",
+    "Temperate"
+  ]
+}

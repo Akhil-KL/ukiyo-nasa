@@ -1,0 +1,8 @@
+{
+  "type": "one_hot",
+  "categories": [
+    "K2-Era",
+    "TESS-Era",
+    "Kepler-Era"
+  ]
+}

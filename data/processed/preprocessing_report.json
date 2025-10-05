@@ -1,0 +1,48 @@
+{
+  "preprocessing_summary": {
+    "timestamp": "2025-10-05T03:27:57.117820",
+    "original_samples": 21271,
+    "processed_samples": 19571,
+    "original_features": 20,
+    "processed_features": 38,
+    "missing_value_percentage": 38.84490621033332
+  },
+  "dataset_composition": {
+    "k2_samples": 4004,
+    "kepler_samples": 9564,
+    "tess_samples": 7703
+  },
+  "target_distribution": {
+    "FALSE POSITIVE": 5132,
+    "CONFIRMED": 5061,
+    "PC": 4679,
+    "CANDIDATE": 3353,
+    "FP": 1197,
+    "CP": 684,
+    "KP": 583,
+    "APC": 462,
+    "FA": 98,
+    "REFUTED": 22
+  },
+  "feature_engineering": {
+    "new_features_created": [
+      "transit_snr_calculated",
+      "in_habitable_zone",
+      "size_category",
+      "stellar_class",
+      "discovery_era",
+      "temp_category",
+      "insolation_ratio"
+    ],
+    "categorical_features_encoded": [
+      "discovery_method",
+      "dataset_source",
+      "size_category",
+      "stellar_class",
+      "discovery_era",
+      "temp_category",
+      "target"
+    ],
+    "normalization_applied": "StandardScaler"
+  }
+}

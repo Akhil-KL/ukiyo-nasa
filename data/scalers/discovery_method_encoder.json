@@ -1,0 +1,7 @@
+{
+  "type": "one_hot",
+  "categories": [
+    "Transit",
+    "Radial Velocity"
+  ]
+}

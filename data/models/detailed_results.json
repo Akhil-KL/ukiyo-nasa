@@ -1,0 +1,32 @@
+{
+  "random_forest": {
+    "train_accuracy": 0.9220487804878049,
+    "val_accuracy": 0.7459128065395095,
+    "cv_mean": 0.8102439024390243,
+    "cv_std": 0.0029831970441796065
+  },
+  "gradient_boosting": {
+    "train_accuracy": 0.9037073170731708,
+    "val_accuracy": 0.7547683923705722,
+    "cv_mean": 0.8050731707317074,
+    "cv_std": 0.004200223783732542
+  },
+  "svm": {
+    "train_accuracy": 0.7215609756097561,
+    "val_accuracy": 0.6546321525885559,
+    "cv_mean": 0.7092682926829268,
+    "cv_std": 0.005192315742725925
+  },
+  "neural_network": {
+    "train_accuracy": 0.8838048780487805,
+    "val_accuracy": 0.7162806539509536,
+    "cv_mean": 0.7927317073170732,
+    "cv_std": 0.007758091475565893
+  },
+  "logistic_regression": {
+    "train_accuracy": 0.6896585365853658,
+    "val_accuracy": 0.638283378746594,
+    "cv_mean": 0.6885365853658536,
+    "cv_std": 0.005572516906729644
+  }
+}

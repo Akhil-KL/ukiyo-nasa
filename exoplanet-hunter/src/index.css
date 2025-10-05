@@ -1,0 +1,310 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* NASA-inspired fonts - Proxima Nova alternatives and space-themed typography */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure full desktop screen coverage */
+html {
+  font-family: 'Space Grotesk', 'Exo 2', ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.6;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Space Grotesk', 'Exo 2', ui-sans-serif, system-ui, sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #000000 0%, #330000 25%, #660000 50%, #990000 75%, #000000 100%);
+  min-height: 100vh;
+  color: #FFFFFF;
+  letter-spacing: 0.01em;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Cosmic background effects */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, rgba(255, 255, 255, 0.1), transparent),
+    radial-gradient(1px 1px at 40px 70px, rgba(255, 255, 255, 0.08), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(124, 58, 237, 0.05), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.12), transparent),
+    radial-gradient(1px 1px at 160px 30px, rgba(139, 92, 246, 0.06), transparent);
+  background-repeat: repeat;
+  background-size: 300px 200px;
+  animation: twinkle 6s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(30, 27, 75, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, 0.6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 58, 237, 0.8);
+}
+
+/* Custom animations */
+@keyframes twinkle {
+  0% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+  100% { opacity: 0.3; transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 5px rgba(124, 58, 237, 0.5);
+  }
+  50% { 
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.8), 0 0 30px rgba(124, 58, 237, 0.6);
+  }
+}
+
+/* Enhanced utility classes with better spacing and darker theme */
+.glass-effect {
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(91, 33, 182, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.glass-panel {
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 68, 68, 0.3);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #FFFFFF;
+}
+
+.glass-panel:hover {
+  background: rgba(0, 0, 0, 0.8);
+  border-color: rgba(255, 68, 68, 0.6);
+  box-shadow: 0 20px 64px rgba(255, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.glass-button {
+  background: rgba(255, 68, 68, 0.15);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 68, 68, 0.4);
+  transition: all 0.3s ease;
+  color: #FFFFFF;
+}
+
+.glass-button:hover {
+  background: rgba(255, 68, 68, 0.25);
+  border-color: rgba(255, 68, 68, 0.6);
+}
+
+.cosmic-glow {
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.4), 0 0 60px rgba(14, 165, 233, 0.2);
+}
+
+.text-glow {
+  text-shadow: 0 0 15px rgba(6, 182, 212, 0.6), 0 0 30px rgba(14, 165, 233, 0.3), 0 0 45px rgba(59, 130, 246, 0.2);
+  color: #FFFFFF;
+}
+
+/* Additional futuristic glow effects */
+.neon-cyan {
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.5), 0 0 40px rgba(6, 182, 212, 0.3), 0 0 60px rgba(6, 182, 212, 0.1);
+}
+
+.neon-purple {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.5), 0 0 40px rgba(168, 85, 247, 0.3), 0 0 60px rgba(168, 85, 247, 0.1);
+}
+
+.neon-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5), 0 0 40px rgba(59, 130, 246, 0.3), 0 0 60px rgba(59, 130, 246, 0.1);
+}
+
+.nasa-title {
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.space-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.025em;
+  color: #FFFFFF;
+}
+
+.enhanced-spacing {
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.enhanced-spacing-lg {
+  padding: 3rem;
+  margin-bottom: 3rem;
+}
+
+.card-enhanced {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 68, 68, 0.4);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 16px 56px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #FFFFFF;
+  font-size: 1rem;
+}
+
+.card-enhanced:hover {
+  background: rgba(0, 0, 0, 0.9);
+  border-color: rgba(255, 68, 68, 0.7);
+  box-shadow: 0 24px 80px rgba(255, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Enhanced 3D Scene and UI Layout Styles */
+.space-scene-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.space-scene-container canvas {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Proper UI layering and glass morphism effects */
+.glass-panel {
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 10;
+}
+
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.glass-button {
+  background: rgba(255, 68, 68, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 68, 68, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-button:hover {
+  background: rgba(255, 68, 68, 0.2);
+  border-color: rgba(255, 68, 68, 0.5);
+  box-shadow: 0 8px 32px rgba(255, 68, 68, 0.3);
+}
+
+/* Optimized animations for smooth performance */
+.smooth-transform {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Content area proper layering */
+.content-layer {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.navbar-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  pointer-events: auto;
+}
+
+/* Fix for scrolling with 3D background */
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Ensure proper stacking context */
+.main-container {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* 3D scene performance optimizations */
+.webgl-container {
+  transform: translateZ(0);
+  will-change: transform;
+  contain: layout style paint;
+}

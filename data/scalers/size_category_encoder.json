@@ -1,0 +1,10 @@
+{
+  "type": "one_hot",
+  "categories": [
+    "Mini-Neptune",
+    "Earth-size",
+    "Super-Earth",
+    "Neptune-size",
+    "Jupiter-size"
+  ]
+}

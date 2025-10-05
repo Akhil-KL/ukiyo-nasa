@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #030014 0%, #0A0320 30%, #1A0B2E 60%, #0F0A1F 100%);
+            color: white;
+            min-height: 300vh; /* Force scroll */
+        }
+        .section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #7C3AED;
+            margin: 20px 0;
+            border-radius: 10px;
+            background: rgba(124, 58, 237, 0.1);
+        }
+        .test-info {
+            padding: 20px;
+            background: rgba(124, 58, 237, 0.2);
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-info">
+        <h1>🚀 Exoplanet Hunter - Scroll Test</h1>
+        <p><strong>Testing scrolling functionality fixes</strong></p>
+        <ul>
+            <li>✅ Removed `overflow: hidden` from CSS</li>
+            <li>✅ Fixed `position: fixed` on #root</li>
+            <li>✅ Updated component structures</li>
+            <li>✅ Fixed transform interference</li>
+        </ul>
+        <p><strong>Expected Result:</strong> You should be able to scroll through this page smoothly</p>
+    </div>
+
+    <div class="section">
+        <h1>📡 Section 1: Homepage Hero</h1>
+    </div>
+
+    <div class="section">
+        <h1>🌍 Section 2: Features</h1>
+    </div>
+
+    <div class="section">
+        <h1>🔬 Section 3: Call to Action</h1>
+    </div>
+
+    <div class="section">
+        <h1>📊 Section 4: Data Upload</h1>
+    </div>
+
+    <div class="section">
+        <h1>🎯 Section 5: About</h1>
+    </div>
+
+    <div class="test-info">
+        <h2>✅ Scroll Test Complete!</h2>
+        <p>If you can see this section, scrolling is working properly!</p>
+        <p><strong>Next Steps:</strong></p>
+        <ul>
+            <li>Return to <a href="http://localhost:5173" style="color: #7C3AED;">localhost:5173</a></li>
+            <li>Test scrolling on all pages (Home, Explore, Upload, About)</li>
+            <li>Verify parallax effects work smoothly</li>
+            <li>Test CSV upload functionality</li>
+        </ul>
+    </div>
+
+    <script>
+        // Add scroll indicator
+        let scrolled = 0;
+        window.addEventListener('scroll', () => {
+            scrolled = window.scrollY;
+            document.title = `Scroll Test - ${Math.round(scrolled)}px scrolled`;
+            console.log('Scroll position:', scrolled);
+        });
+
+        // Auto scroll test
+        setTimeout(() => {
+            window.scrollTo({ top: 500, behavior: 'smooth' });
+        }, 2000);
+    </script>
+</body>
+</html>

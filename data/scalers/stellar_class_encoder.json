@@ -1,0 +1,10 @@
+{
+  "type": "one_hot",
+  "categories": [
+    "G-dwarf",
+    "K-dwarf",
+    "F-dwarf",
+    "M-dwarf",
+    "Hot-star"
+  ]
+}

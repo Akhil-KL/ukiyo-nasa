@@ -1,0 +1,13 @@
+# NASA Exoplanet ML Service - Python Requirements
+# Core ML and Data Processing
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+joblib>=1.3.0
+
+# Web Service
+Flask>=2.3.0
+Flask-CORS>=4.0.0
+
+# Production
+gunicorn>=21.0.0

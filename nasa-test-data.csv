@@ -1,0 +1,22 @@
+# NASA Exoplanet Archive Test Data
+# This file mimics the structure of real NASA datasets
+# COLUMN loc_rowid:             Location ID
+# COLUMN pl_name:              Planet Name  
+# COLUMN hostname:             Host Name
+# COLUMN default_flag:         Default Parameter Set
+# COLUMN disposition:          Archive Disposition
+# COLUMN discoverymethod:      Discovery Method
+# COLUMN disc_year:           Discovery Year
+# COLUMN pl_orbper:           Orbital Period [days]
+# COLUMN pl_rade:             Planet Radius [Earth Radius]
+# COLUMN pl_bmasse:           Planet Mass or Mass*sin(i) [Earth Mass]
+# COLUMN st_teff:             Stellar Effective Temperature [K]
+# COLUMN st_rad:              Stellar Radius [Solar Radius]
+# COLUMN st_mass:             Stellar Mass [Solar mass]
+# COLUMN sy_dist:             Distance [pc]
+loc_rowid,pl_name,hostname,default_flag,disposition,discoverymethod,disc_year,pl_orbper,pl_rade,pl_bmasse,st_teff,st_rad,st_mass,sy_dist
+1,Kepler-452b,Kepler-452,1,CONFIRMED,Transit,2015,384.843,1.6,5.0,5757,1.11,1.04,1402
+2,TRAPPIST-1e,TRAPPIST-1,1,CONFIRMED,Transit,2017,6.099615,0.92,0.69,2559,0.121,0.089,40.7
+3,Proxima Centauri b,Proxima Centauri,1,CONFIRMED,Radial Velocity,2016,11.186,1.1,1.17,3042,0.154,0.122,4.24
+4,K2-18 b,K2-18,1,CONFIRMED,Transit,2015,32.940,2.3,8.6,3457,0.41,0.36,124
+5,TOI-715 b,TOI-715,1,CONFIRMED,Transit,2024,19.28,1.55,3.02,3341,0.374,0.357,137
